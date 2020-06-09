@@ -1,0 +1,16 @@
+.headline {
+  font-size: 3.5rem;
+  text-align: center;
+  transition: all 0.2s;
+  // Gradient Effect
+  background-image: linear-gradient(to right, $cor11, $cor12);
+  background-clip: border-box;
+  -webkit-background-clip: text; //Like a mask
+  color: transparent;
+
+  //Animation effect
+  &:hover {
+    transform: skew(0deg, -1deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color: $black, $alpha: 0.2);
+  }
+}
