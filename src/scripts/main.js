@@ -1,2 +1,2 @@
-require('./modules/timer');
+require('./App');
 require('../styles/styles.scss');

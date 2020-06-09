@@ -8,17 +8,22 @@ class Timer {
       e.preventDefault();
       this.start();
     });
+
+    this.pauseButton.addEventListener('click', e => {
+      e.preventDefault();
+      this.pause();
+    });
   }
   start() {
     this.tick();
+    this.interval = setInterval(this.tick, 1000);
   }
 
   tick() {
-    console.log('1, 2, 3');
+    console.log('tick');
+  }
+  pause() {
+    clearInterval(this.interval);
   }
 }
-const startButton = document.querySelector('#start');
-const pauseButton = document.querySelector('#pause');
-const input = document.querySelector('#input');
-
-let timer1 = new Timer(startButton, pauseButton, input);
+module.exports = Timer;
