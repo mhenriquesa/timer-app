@@ -4,4 +4,14 @@ const startButton = document.querySelector('#start');
 const pauseButton = document.querySelector('#pause');
 const input = document.querySelector('#input');
 
-let timer1 = new Timer(startButton, pauseButton, input);
+let timer1 = new Timer(startButton, pauseButton, input, {
+  onStart() {
+    console.log('timer Started');
+  },
+  onTick() {
+    console.log('tick...');
+  },
+  onComplete() {
+    console.log('Completed!');
+  },
+});
