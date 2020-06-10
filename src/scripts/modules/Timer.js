@@ -16,12 +16,12 @@ class Timer {
   }
   start() {
     this.tick();
-    this.interval = setInterval(this.tick, 1000);
+    this.interval = setInterval(this.tick.bind(this), 1000);
     this.startButton.classList.add('btn--hidden');
   }
 
   tick() {
-    this.timeRemaining = timeRemaining - 1;
+    this.timeRemaining = this.timeRemaining - 1;
   }
 
   pause() {
