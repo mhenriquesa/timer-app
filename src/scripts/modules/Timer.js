@@ -21,7 +21,8 @@ class Timer {
   }
 
   tick() {
-    this.timeRemaining = this.timeRemaining - 1;
+    if (this.timeRemaining === 0) return this.pause;
+    this.timeRemaining -= 1;
   }
 
   pause() {
