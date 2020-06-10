@@ -2,7 +2,7 @@ class Timer {
   constructor(startButton, pauseButton, input) {
     this.startButton = startButton;
     this.pauseButton = pauseButton;
-    this.input = input;
+    this.durationInput = input;
 
     this.startButton.addEventListener('click', e => {
       e.preventDefault();
@@ -17,13 +17,24 @@ class Timer {
   start() {
     this.tick();
     this.interval = setInterval(this.tick, 1000);
+    this.startButton.classList.add('btn--hidden');
   }
 
   tick() {
-    console.log('tick');
+    this.timeRemaining = timeRemaining - 1;
   }
+
   pause() {
     clearInterval(this.interval);
+    this.startButton.classList.remove('btn--hidden');
+  }
+
+  get timeRemaining() {
+    return parseFloat(this.durationInput.value);
+  }
+
+  set timeRemaining(time) {
+    this.durationInput.value = time;
   }
 }
 module.exports = Timer;
