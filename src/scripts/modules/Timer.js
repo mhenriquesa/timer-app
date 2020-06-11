@@ -28,11 +28,11 @@ class Timer {
 
   tick() {
     if (this.timeRemaining === 0) {
-      this.onComplete();
+      if (this.onComplete) this.onComplete();
       return this.pause();
     }
     this.timeRemaining -= 1;
-    this.onTick();
+    if (this.onTick) this.onTick();
   }
 
   pause() {

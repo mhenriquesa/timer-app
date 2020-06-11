@@ -1,4 +1,4 @@
-import Timer from './modules/Timer';
+const Timer = require('./modules/Timer');
 
 const startButton = document.querySelector('#start');
 const pauseButton = document.querySelector('#pause');
@@ -15,3 +15,4 @@ let timer1 = new Timer(startButton, pauseButton, input, {
     console.log('Completed!');
   },
 });
+console.log(timer1);
